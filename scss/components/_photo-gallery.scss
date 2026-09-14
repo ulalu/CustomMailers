@@ -1,0 +1,59 @@
+@use '../abstracts/tokens' as t;
+@use '../abstracts/mixins' as m;
+
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-xs;
+}
+
+.photo-gallery__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: t.$space-sm;
+  max-height: 24rem;
+  padding: t.$space-2xs;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: t.$app-surface-sunken;
+  border: 1px solid t.$app-border;
+  border-radius: t.$radius-md;
+}
+
+.photo-gallery__item {
+  min-width: 0;
+}
+
+.photo-gallery__input {
+  @include m.visually-hidden;
+}
+
+.photo-gallery__label {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px t.$app-border;
+  transition: box-shadow 120ms ease;
+}
+
+.photo-gallery__label:hover {
+  box-shadow: 0 0 0 2px t.$app-border-strong;
+}
+
+.photo-gallery__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.photo-gallery__input:checked + .photo-gallery__label {
+  box-shadow: 0 0 0 3px t.$app-focus;
+}
+
+.photo-gallery__input:focus-visible + .photo-gallery__label {
+  @include m.focus-ring(3px);
+}

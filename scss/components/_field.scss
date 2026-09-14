@@ -1,0 +1,83 @@
+@use '../abstracts/tokens' as t;
+@use '../abstracts/mixins' as m;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-2xs;
+}
+
+.field__label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: t.$app-ink;
+}
+
+.field__input,
+.field__textarea {
+  @include m.control-surface;
+  width: 100%;
+  padding: t.$space-xs t.$space-sm;
+  font-size: 0.875rem;
+}
+
+.field__textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.field__footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: t.$space-xs;
+}
+
+.field__hint {
+  font-size: 0.75rem;
+  color: t.$app-ink-faint;
+}
+
+.field__counter {
+  font-family: t.$app-font-mono;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: t.$app-ink-faint;
+  white-space: nowrap;
+}
+
+.field__counter--warning {
+  color: t.$app-warning;
+}
+
+.field__counter--over {
+  color: t.$app-danger;
+  font-weight: 600;
+}
+
+.field--invalid .field__input,
+.field--invalid .field__textarea {
+  border-color: t.$app-danger;
+}
+
+.field__error {
+  font-size: 0.75rem;
+  color: t.$app-danger;
+}
+
+.field--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: t.$space-xs;
+}
+
+.field--checkbox .field__label {
+  font-weight: 400;
+}
+
+.field__checkbox {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: t.$app-focus;
+}

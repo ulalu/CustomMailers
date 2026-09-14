@@ -1,0 +1,37 @@
+@use '../abstracts/tokens' as t;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app__main {
+  display: grid;
+  grid-template-columns: t.$control-panel-width minmax(0, 1fr);
+  align-items: start;
+  flex: 1;
+  min-height: 0;
+}
+
+.app__status {
+  position: fixed;
+  right: t.$space-md;
+  bottom: t.$space-md;
+  max-width: 24rem;
+  padding: t.$space-xs t.$space-sm;
+  border-radius: t.$radius-md;
+  background: t.$app-ink;
+  color: #fff;
+  font-size: 0.8125rem;
+  box-shadow: t.$shadow-raised;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+}
+
+.app__status--visible {
+  opacity: 1;
+  transform: translateY(0);
+}

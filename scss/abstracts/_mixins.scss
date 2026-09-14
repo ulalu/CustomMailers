@@ -1,0 +1,36 @@
+@use 'tokens' as t;
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin focus-ring($offset: 2px) {
+  outline: 2px solid t.$app-focus;
+  outline-offset: $offset;
+}
+
+@mixin control-surface {
+  background: t.$app-surface-raised;
+  border: 1px solid t.$app-border;
+  border-radius: t.$radius-md;
+}
+
+@mixin truncate-lines($count) {
+  display: -webkit-box;
+  -webkit-line-clamp: $count;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin exact-print-colors {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}

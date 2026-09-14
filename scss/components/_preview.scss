@@ -1,0 +1,48 @@
+@use '../abstracts/tokens' as t;
+@use '../abstracts/page' as p;
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: t.$space-2xs;
+  min-width: 0;
+  padding: t.$space-xl t.$space-lg t.$space-2xl;
+}
+
+.preview__heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: t.$app-ink-faint;
+}
+
+.preview__note {
+  font-size: 0.75rem;
+  color: t.$app-ink-faint;
+}
+
+.preview__warning {
+  max-width: 34rem;
+  margin-top: t.$space-xs;
+  padding: t.$space-xs t.$space-sm;
+  border: 1px solid t.$app-warning;
+  border-radius: t.$radius-md;
+  background: #fff8f0;
+  font-size: 0.8125rem;
+  color: t.$app-warning;
+  text-align: center;
+}
+
+.preview__stage {
+  --preview-scale: 1;
+  width: calc(#{p.$page-width} * var(--preview-scale));
+  height: calc(#{p.$page-height} * var(--preview-scale));
+  margin-top: t.$space-md;
+}
+
+.preview__stage .mailer {
+  transform: scale(var(--preview-scale));
+  transform-origin: top left;
+}

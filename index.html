@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campaign Mailer Builder</title>
+  <meta name="description" content="Assemble and print a letter-size campaign mailer in your browser.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="app">
+  <header class="app__header toolbar">
+    <h1 class="toolbar__title">Campaign Mailer Builder</h1>
+    <div class="toolbar__actions">
+      <button type="button" class="button button--ghost" data-action="start-over">Start over</button>
+      <button type="button" class="button button--primary" data-action="print">Print mailer</button>
+    </div>
+  </header>
+
+  <main class="app__main">
+    <section class="control-panel" aria-labelledby="control-panel-heading">
+      <h2 class="control-panel__heading" id="control-panel-heading">Build your mailer</h2>
+
+      <section class="control-panel__step" aria-labelledby="step-template-heading">
+        <h3 class="control-panel__step-heading" id="step-template-heading">1. Choose a layout</h3>
+        <div class="control-panel__step-body" data-region="template-picker"></div>
+      </section>
+
+      <section class="control-panel__step" aria-labelledby="step-colorway-heading">
+        <h3 class="control-panel__step-heading" id="step-colorway-heading">2. Choose a colour scheme</h3>
+        <div class="control-panel__step-body" data-region="colorway-picker"></div>
+        <div class="control-panel__step-body" data-region="logo-picker"></div>
+      </section>
+
+      <section class="control-panel__step" aria-labelledby="step-content-heading">
+        <h3 class="control-panel__step-heading" id="step-content-heading">3. Add your content</h3>
+        <div class="control-panel__step-body" data-region="content-form"></div>
+      </section>
+    </section>
+
+    <section class="preview" aria-labelledby="preview-heading">
+      <h2 class="preview__heading" id="preview-heading">Preview</h2>
+      <p class="preview__note">Shown at true letter size (8.5in &times; 11in).</p>
+      <p class="preview__warning" role="status" data-region="overflow-warning" hidden></p>
+      <div class="preview__stage" data-region="preview-stage">
+        <article class="mailer" data-region="mailer" aria-label="Mailer preview"></article>
+      </div>
+    </section>
+  </main>
+
+  <p class="app__status" role="status" aria-live="polite" data-region="status"></p>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

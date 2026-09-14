@@ -1,0 +1,22 @@
+@use '../abstracts/tokens' as t;
+@use '../abstracts/mixins' as m;
+
+.option-grid--logos {
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+}
+
+.logo-picker__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.9rem;
+  padding: t.$space-2xs t.$space-xs;
+  border-radius: t.$radius-sm;
+  @include m.exact-print-colors;
+}
+
+.logo-picker__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,156 @@
+
+$font-path-kensington: '../assets/fonts/Kensington';
+$font-path-halyard: '../assets/fonts/Halyard/fonts';
+
+@font-face {
+  font-family: 'Kensington Compressed';
+  src: url('#{$font-path-kensington}/KensingtonTest-CompressedRegular-BF65d815b73b9b6.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Kensington Compressed';
+  src: url('#{$font-path-kensington}/KensingtonTest-CompressedMedium-BF65d815b746c32.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Kensington Compressed';
+  src: url('#{$font-path-kensington}/KensingtonTest-CompressedDemi-BF65d815b749bc4.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Kensington Compressed';
+  src: url('#{$font-path-kensington}/KensingtonTest-CompressedBold-BF65d815b71c97a.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Kensington Compressed';
+  src: url('#{$font-path-kensington}/KensingtonTest-CompressedBlack-BF65d815b68a0b7.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Halyard Text';
+  src: url('#{$font-path-halyard}/fonnts.com-Halyard_Text_Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Halyard Text';
+  src: url('#{$font-path-halyard}/fonnts.com-Halyard_Text_Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Halyard Text';
+  src: url('#{$font-path-halyard}/fonnts.com-Halyard_Text_Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Halyard Text';
+  src: url('#{$font-path-halyard}/fonnts.com-Halyard_Text_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Halyard Text';
+  src: url('#{$font-path-halyard}/fonnts.com-Halyard_Text_Medium_Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Halyard Text';
+  src: url('#{$font-path-halyard}/fonnts.com-Halyard_Text_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Halyard Text';
+  src: url('#{$font-path-halyard}/fonnts.com-Halyard_Text_Bold_Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;
+}
+
+:root {
+  --brand-deep-blue: #1e204e;
+  --brand-medium-blue: #2a326c;
+  --brand-light-blue: #4e6aae;
+
+  --brand-coral: #ff564d;
+  --brand-red: #c13531;
+
+  --brand-dark-beige: #cba16e;
+  --brand-medium-beige: #e1b682;
+  --brand-light-beige: #f5cd9c;
+  --brand-cream: #fbf0e4;
+  --brand-light-cream: #fdf5ed;
+
+  --brand-charcoal: #383533;
+  --brand-black: #141312;
+  --brand-white: #ffffff;
+
+  --brand-font-display: 'Kensington Compressed', 'Haettenschweiler', 'Arial Narrow', sans-serif;
+  --brand-font-body: 'Halyard Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+$weight-display-black: 900;
+$weight-display-bold: 700;
+$weight-display-demi: 600;
+$weight-display-medium: 500;
+
+$weight-body-regular: 400;
+$weight-body-medium: 500;
+$weight-body-bold: 700;
+
+$mailer-margin: 0.4in;
+$mailer-gutter: 0.25in;
+$mailer-rule-weight: 1pt;
+
+$type-slogan: 30pt;
+$type-candidate-name: 17pt;
+$type-eyebrow: 8pt;
+$type-section-heading: 8pt;
+$type-position-eyebrow: 6.75pt;
+$type-position-title: 14.5pt;
+$type-position-summary: 8pt;
+$type-position-point: 7.5pt;
+$type-supporter-blurb: 10pt;
+$type-supporter-name: 8pt;
+$type-qr-caption: 7pt;
+
+$leading-slogan: 1.13;
+$leading-name: 1.24;
+$leading-subhead: 1.32;
+$leading-body: 1.45;
+$leading-micro: 1.25;
+
+$tracking-headline: 0.005em;
+$tracking-subhead: 0.01em;
+$tracking-body: 0.005em;

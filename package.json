@@ -1,0 +1,19 @@
+{
+  "name": "custommailers",
+  "version": "1.0.0",
+  "description": "Client-side builder for print-ready letter-size political campaign mailers.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:css": "sass scss/main.scss css/main.css --style=compressed --no-source-map",
+    "watch:css": "sass --watch scss/main.scss css/main.css --style=expanded",
+    "serve": "python -m http.server 8080",
+    "dev": "npm run watch:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.104.1"
+  }
+}

@@ -1,0 +1,70 @@
+@use '../abstracts/mixins' as m;
+@use '../abstracts/page' as p;
+
+@page {
+  size: p.$page-width p.$page-height;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: p.$page-width;
+    height: p.$page-height;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .app__header,
+  .control-panel,
+  .preview__heading,
+  .preview__note,
+  .app__status {
+    display: none !important;
+  }
+
+  .app,
+  .app__main,
+  .preview,
+  .preview__stage {
+    display: block;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: none;
+    border: 0;
+  }
+
+  .preview__stage {
+    --preview-scale: 1;
+  }
+
+  .preview__stage .mailer {
+    transform: none;
+  }
+
+  .mailer {
+    @include m.exact-print-colors;
+    width: p.$page-width;
+    height: p.$page-height;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .mailer *,
+  .mailer *::before,
+  .mailer *::after {
+    @include m.exact-print-colors;
+  }
+}

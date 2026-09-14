@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+$page-width: 8.5in;
+$page-height: 11in;
+$page-aspect-ratio: math.div(8.5, 11);
+
+$screen-dpi: 96;
+$page-width-px: 816px;
+$page-height-px: 1056px;

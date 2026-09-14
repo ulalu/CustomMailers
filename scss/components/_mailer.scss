@@ -1,0 +1,54 @@
+@use '../abstracts/tokens' as t;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/page' as p;
+
+.mailer {
+  @include m.exact-print-colors;
+  position: relative;
+  width: p.$page-width;
+  height: p.$page-height;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: t.$shadow-page;
+}
+
+.mailer__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: t.$space-xs;
+  height: 100%;
+  padding: t.$space-2xl;
+  text-align: center;
+  color: t.$app-ink-faint;
+}
+
+.mailer__empty-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: t.$app-ink-muted;
+}
+
+.mailer__empty-body {
+  max-width: 24rem;
+  font-size: 0.875rem;
+}
+
+.mailer__qr {
+  display: block;
+  width: calc(1in * var(--qr-scale, 1));
+  height: auto;
+}
+
+.mailer__placeholder {
+  font-style: italic;
+  opacity: 0.55;
+}
+
+@media screen {
+  .mailer--overflowing {
+    outline: 2px solid t.$app-warning;
+    outline-offset: 2px;
+  }
+}

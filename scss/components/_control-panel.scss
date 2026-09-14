@@ -1,0 +1,51 @@
+@use '../abstracts/tokens' as t;
+
+.control-panel {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-lg;
+  max-height: calc(100vh - #{t.$toolbar-height});
+  padding: t.$space-lg;
+  overflow-y: auto;
+  background: t.$app-surface;
+  border-right: 1px solid t.$app-border;
+}
+
+.control-panel__heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: t.$app-ink-faint;
+}
+
+.control-panel__step {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-sm;
+  padding-bottom: t.$space-lg;
+  border-bottom: 1px solid t.$app-border;
+}
+
+.control-panel__step:last-of-type {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.control-panel__step-heading {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.control-panel__step-body {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-md;
+}
+
+.control-panel__empty {
+  font-size: 0.875rem;
+  color: t.$app-ink-faint;
+}

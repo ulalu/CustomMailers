@@ -1,0 +1,62 @@
+@use '../abstracts/tokens' as t;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: t.$space-2xs;
+  padding: t.$space-xs t.$space-sm;
+  border: 1px solid transparent;
+  border-radius: t.$radius-md;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  background: t.$app-accent;
+  color: #fff;
+}
+
+.button--primary:hover:not(:disabled) {
+  background: #000;
+}
+
+.button--ghost {
+  background: transparent;
+  border-color: t.$app-border;
+  color: t.$app-ink-muted;
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: t.$app-surface-sunken;
+  color: t.$app-ink;
+}
+
+.button--subtle {
+  padding: t.$space-2xs t.$space-xs;
+  background: transparent;
+  color: t.$app-ink-muted;
+  font-size: 0.8125rem;
+}
+
+.button--subtle:hover:not(:disabled) {
+  color: t.$app-ink;
+  background: t.$app-surface-sunken;
+}
+
+.button--danger {
+  color: t.$app-danger;
+}
+
+.button--danger:hover:not(:disabled) {
+  background: rgba(180, 35, 24, 0.08);
+  color: t.$app-danger;
+}

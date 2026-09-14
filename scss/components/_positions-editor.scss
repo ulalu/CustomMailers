@@ -1,0 +1,136 @@
+@use '../abstracts/tokens' as t;
+@use '../abstracts/mixins' as m;
+
+.positions-editor {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-sm;
+}
+
+.positions-editor__list {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-sm;
+}
+
+.positions-editor__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: t.$space-xs;
+}
+
+.positions-editor__count {
+  font-size: 0.75rem;
+  color: t.$app-ink-faint;
+}
+
+.positions-editor__count--at-limit {
+  color: t.$app-warning;
+}
+
+.position {
+  @include m.control-surface;
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-xs;
+  padding: t.$space-sm;
+  background: t.$app-surface-sunken;
+}
+
+.position__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: t.$space-xs;
+}
+
+.position__index {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: t.$app-ink-faint;
+}
+
+.position__controls {
+  display: flex;
+  gap: t.$space-3xs;
+}
+
+.field__select {
+  @include m.control-surface;
+  width: 100%;
+  padding: t.$space-xs t.$space-sm;
+  font-size: 0.875rem;
+}
+
+.position__detail {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-xs;
+}
+
+.position__hint {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: t.$app-ink-faint;
+}
+
+.position__summary {
+  padding: t.$space-xs t.$space-sm;
+  border-left: 2px solid t.$app-border-strong;
+  background: t.$app-surface;
+  border-radius: 0 t.$radius-sm t.$radius-sm 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: t.$app-ink-muted;
+}
+
+.position__points-legend {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: t.$app-ink;
+}
+
+.position__points {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-2xs;
+}
+
+.position__point {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: t.$space-xs;
+  align-items: start;
+}
+
+.position__point-input {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.15rem 0 0;
+  accent-color: t.$app-focus;
+}
+
+.position__point-label {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: t.$app-ink;
+  cursor: pointer;
+}
+
+.position__point-input:disabled + .position__point-label {
+  color: t.$app-ink-faint;
+  cursor: not-allowed;
+}
+
+.position__points-count {
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: t.$app-ink-faint;
+}
+
+.position__points-count--at-limit {
+  color: t.$app-warning;
+}

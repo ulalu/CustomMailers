@@ -1,0 +1,72 @@
+@use '../abstracts/tokens' as t;
+@use '../abstracts/mixins' as m;
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+  gap: t.$space-xs;
+}
+
+.option-grid--swatches {
+  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+}
+
+.option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-2xs;
+}
+
+.option__input {
+  @include m.visually-hidden;
+}
+
+.option__label {
+  @include m.control-surface;
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-2xs;
+  padding: t.$space-xs;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.option__input:checked + .option__label {
+  border-color: t.$app-focus;
+  box-shadow: inset 0 0 0 1px t.$app-focus;
+}
+
+.option__input:focus-visible + .option__label {
+  @include m.focus-ring;
+}
+
+.option__thumb {
+  width: 100%;
+  aspect-ratio: 8.5 / 11;
+  border-radius: t.$radius-sm;
+  background-color: t.$app-surface-sunken;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.option__swatch {
+  display: flex;
+  height: 1.75rem;
+  border-radius: t.$radius-sm;
+  overflow: hidden;
+  @include m.exact-print-colors;
+}
+
+.option__swatch-band {
+  flex: 1;
+}
+
+.option__name {
+  color: t.$app-ink;
+}

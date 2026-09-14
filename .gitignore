@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
 
+# Sass
+.sass-cache/
+*.css.map
+
 # OS files
 .DS_Store
 Thumbs.db

@@ -1,0 +1,73 @@
+@use '../abstracts/tokens' as t;
+@use '../abstracts/mixins' as m;
+
+.photo-input {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-xs;
+}
+
+.photo-input__frame {
+  @include m.control-surface;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: t.$app-surface-sunken;
+  border-style: dashed;
+  overflow: hidden;
+}
+
+.photo-input__frame--filled {
+  border-style: solid;
+}
+
+.photo-input__preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-input__placeholder {
+  padding: t.$space-md;
+  font-size: 0.75rem;
+  text-align: center;
+  color: t.$app-ink-faint;
+}
+
+.photo-input__file {
+  @include m.visually-hidden;
+}
+
+.photo-input__actions {
+  display: flex;
+  align-items: center;
+  gap: t.$space-xs;
+}
+
+.photo-input__trigger {
+  @include m.control-surface;
+  padding: t.$space-xs t.$space-sm;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.photo-input__trigger:hover {
+  background: t.$app-surface-sunken;
+}
+
+.photo-input__file:focus-visible + .photo-input__trigger {
+  @include m.focus-ring;
+}
+
+.photo-input__meta {
+  font-size: 0.75rem;
+  color: t.$app-ink-faint;
+}
+
+.photo-input__error {
+  font-size: 0.75rem;
+  color: t.$app-danger;
+}
